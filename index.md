@@ -23,8 +23,12 @@ After importing the `.unitypackage`, using GraphIt is very simple:
   ```
   GraphIt.CreateGraph(GameObject pointToObject, out Graph graph);
   ```
+  _pointToObject: specify what GameObject's inspector you want the graph to appear on. More often than not, you will set this to `this.gameObject`_
+  _graph: specify what reference of Graph you want to create. This is the same obejct you will reference later to set data and edit style_
   For example:
   ```
+  Graph graph;
+  
   private void Start()
   {
       GraphIt.CreateGraph(gameObject, out graph);
