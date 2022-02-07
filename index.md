@@ -26,8 +26,7 @@ After importing the `.unitypackage`, using GraphIt is very simple:
   For example:
   ```
   private void Start()
-    {
-        GraphIt.CreateGraph(gameObject, out graph);
-
-    }
+  {
+      GraphIt.CreateGraph(gameObject, out graph);
+  }
   ```
