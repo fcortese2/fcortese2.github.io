@@ -15,5 +15,19 @@ GraphIt is a Unity tool that allows developers to display graphs in the unity ed
 After importing the `.unitypackage`, using GraphIt is very simple:
 - Firstly, create a new C# script and attach it to a `GameObject`;
 - add the inclusion `using Graphing` at the top of your script;
-- In your newly created script, create a reference variable of type `Graph`:
-  
+- In your newly created script, create a global variable of type `Graph`, but do not instantiate it:
+  ```
+  Graph graph;
+  ```
+- Call the following method once when you want to create a graph in the inspector:
+  ```
+  GraphIt.CreateGraph(GameObject pointToObject, out Graph graph);
+  ```
+  For example:
+  ```
+  private void Start()
+    {
+        GraphIt.CreateGraph(gameObject, out graph);
+
+    }
+  ```
