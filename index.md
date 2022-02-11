@@ -36,34 +36,34 @@ After importing the `.unitypackage`, using GraphIt is very simple:
       GraphIt.CreateGraph(gameObject, out graph);
   }
   ```
-  
-  Now, it is up to the developer to chose what graph type  of visualizer you need:
+ 
+- Now, it is up to the developer to chose what graph type  of visualizer you need:
   1. Represent a set of data of the same length at all times (e.g. representing how many people fall within every age between 0-100 in a bar graph)
   2. Log and track display and trend of gametime variables (e.g. in a turn based game, displaying player gold for the current turn and last 6 turns, updated in real-time)
 
-In both cases, you set the graph's values using the following method:
-```
-graph.SetValues(GraphValue[] points, GraphStyle graphStyle);
-```
-where `points` is an array of GraphValues (which include a `float Value` and `string Tag`) to plot and a GraphStyle which is used as a drawing visual style for the graph. 
+- In both cases, you set the graph's values using the following method:
+  ```
+  graph.SetValues(GraphValue[] points, GraphStyle graphStyle);
+  ```
+  where `points` is an array of GraphValues (which include a `float Value` and `string Tag`) to plot and a GraphStyle which is used as a drawing visual style for the graph. 
 
-To get an array of GraphValue[], a handy static method was created that takes in a `string[]` of tags (labels for the X axis of each value) and a `float[]` of values to display. The method is as follows:
-```
-GraphIt.FormatData(float[] values, string[] tags);
-```
+  To get an array of GraphValue[], a handy static method was created that takes in a `string[]` of tags (labels for the X axis of each value) and a `float[]` of values to  display. The method is as follows:
+  ```
+  GraphIt.FormatData(float[] values, string[] tags);
+  ```
 
-For example, we can create and display values as follows:
-```
-float[] values = new float[5] {1, 2, 3, 4, 5};
-string[] labels = new string[5] {"a", "b", "c", "d", "e"};
+  For example, we can create and display values as follows:
+  ```
+  float[] values = new float[5] {1, 2, 3, 4, 5};
+  string[] labels = new string[5] {"a", "b", "c", "d", "e"};
 
-Graph graph;
+  Graph graph;
 
-private void Start()
-    {
-        GraphIt.CreateGraph(gameObject, out graph, "Test Graph");
-        
-        graph.SetValues(GraphIt.FormatData(values, labels), GraphStyle.DefaultPredict);
-    }
+  private void Start()
+      {
+          GraphIt.CreateGraph(gameObject, out graph, "Test Graph");
 
-```
+          graph.SetValues(GraphIt.FormatData(values, labels), GraphStyle.DefaultPredict);
+      }
+
+  ```
