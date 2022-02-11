@@ -16,11 +16,11 @@ After importing the `.unitypackage`, using GraphIt is very simple:
 - Firstly, create a new C# script and attach it to a `GameObject`;
 - add the inclusion `using Graphing` at the top of your script;
 - In your newly created script, create a global variable of type `Graph`, but do not instantiate it:
-  ```
+  ```csharp
   Graph graph;
   ```
 - Call the following method once when you want to create a graph in the inspector:
-  ```
+  ```csharp
   GraphIt.CreateGraph(GameObject pointToObject, out Graph graph);
   ```
   _pointToObject: specify what GameObject's inspector you want the graph to appear on. More often than not, you will set this to `this.gameObject`_
@@ -28,7 +28,7 @@ After importing the `.unitypackage`, using GraphIt is very simple:
   _graph: specify what reference of Graph you want to create. This is the same obejct you will reference later to set data and edit style_
   
   For example:
-  ```
+  ```csharp
   Graph graph;
   
   private void Start()
@@ -42,17 +42,17 @@ After importing the `.unitypackage`, using GraphIt is very simple:
   2. Log and track display and trend of gametime variables (e.g. in a turn based game, displaying player gold for the current turn and last 6 turns, updated in real-time)
 
 - In both cases, you set the graph's values using the following method:
-  ```
+  ```csharp
   graph.SetValues(GraphValue[] points, GraphStyle graphStyle);
   ```
   where `points` is an array of GraphValues (which include a `float Value` and `string Tag`) to plot and a GraphStyle which is used as a drawing visual style for the graph. 
   To get an array of GraphValue[], a handy static method was created that takes in a `string[]` of tags (labels for the X axis of each value) and a `float[]` of values to  display. The method is as follows:
-  ```
+  ```csharp
   GraphIt.FormatData(float[] values, string[] tags);
   ```
 
   For example, we can create and display values as follows:
-  ```
+  ```csharp
   float[] values = new float[5] {1, 2, 3, 4, 5};
   string[] labels = new string[5] {"a", "b", "c", "d", "e"};
 
