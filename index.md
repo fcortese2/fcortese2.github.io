@@ -46,7 +46,6 @@ After importing the `.unitypackage`, using GraphIt is very simple:
   graph.SetValues(GraphValue[] points, GraphStyle graphStyle);
   ```
   where `points` is an array of GraphValues (which include a `float Value` and `string Tag`) to plot and a GraphStyle which is used as a drawing visual style for the graph. 
-
   To get an array of GraphValue[], a handy static method was created that takes in a `string[]` of tags (labels for the X axis of each value) and a `float[]` of values to  display. The method is as follows:
   ```
   GraphIt.FormatData(float[] values, string[] tags);
