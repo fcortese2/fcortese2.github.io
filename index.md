@@ -70,21 +70,22 @@ After importing the `.unitypackage`, using GraphBrain is very simple:
 ##### Graph Styles
 GraphStyle is a struct that allows the developer to specify parameters around which the graph is displayed.
 The struct can be used to define the following, and every field must be specified when not using a default static style that comes already defined in the package:
+
 | Field | Data Type | Description |
-| --- | --- |
-| bottomMargin | float | Size of bottom margin for X axis labels |
-| leftMargin | float | Size of left margin for Y axis labels |
-| axisWidth | float | Thickness of X and Y axis lines |
-| graphAreaHeight | float | Height of graph area in pixels. I recommend at least 120px |
-| yAxisSteps | int  | Number of tags/steps on the y axis labeling |
-| canSwitchToOtherTypes | bool | States whether graph can be changed to line or bar graph in the inspector |
-| scaleToDesired | bool | Whether the graph should fit a specific Y axis maximum value |
-| fitToYval | int | Value Y axis should be fitted to |
-| yAxisFormatting | string  | Type of formatting to Y axis values, as accepted by .ToString(), such as F0, F2, etc... |
-| yAxisUnitSign | string | Unit sign/symbol to append to Y axis labels. Leave empty for only numerical values |
-| lineGraphPredict | bool | Wether you want the line graph view to show trend and approximate prediction based on given data. |
-| lineGraphPredictionSpace | float | What percentage of horizontal visual space should be dedicated to the prediction |
-| liveItemAdd | bool | Whether the graph should record the last value(s) passed to it through .SetValues() is memory |
-| liveItemBuffer | int | Number of values that are allowed to be recorded and backlogged for Live Item Add |
+| --- | --- | --- |
+| _bottomMargin_ | `float` | Size of bottom margin for X axis labels |
+| _leftMargin_ | `float` | Size of left margin for Y axis labels |
+| _axisWidth_ | `float` | Thickness of X and Y axis lines |
+| _graphAreaHeight_ | `float` | Height of graph area in pixels. I recommend at least 120px |
+| _yAxisSteps_ | `int`  | Number of tags/steps on the y axis labeling |
+| _canSwitchToOtherTypes_ | `bool` | States whether graph can be changed to line or bar graph in the inspector |
+| _scaleToDesired_ | `bool` | Whether the graph should fit a specific Y axis maximum value |
+| _fitToYval_ | `int` | Value Y axis should be fitted to |
+| _yAxisFormatting_ | `string`  | Type of formatting to Y axis values, as accepted by .ToString(), such as F0, F2, etc... |
+| _yAxisUnitSign_ | `string` | Unit sign/symbol to append to Y axis labels. Leave empty for only numerical values |
+| _lineGraphPredict_ | `bool` | Wether you want the line graph view to show trend and approximate prediction based on given data. |
+| _lineGraphPredictionSpace_ | `float` | What percentage of horizontal visual space should be dedicated to the prediction |
+| _liveItemAdd_ | `bool` | Whether the graph should record the last value(s) passed to it through .SetValues() is memory |
+| _liveItemBuffer_ | `int` | Number of values that are allowed to be recorded and backlogged for Live Item Add |
 
 
