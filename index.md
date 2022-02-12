@@ -89,3 +89,76 @@ The struct can be used to define the following, and every field must be specifie
 | _liveItemBuffer_ | `int` | Number of values that are allowed to be recorded and backlogged for Live Item Add |
 
 
+The asset comes with a number of pre-specified GraphStyles, which are as follows:
+**Default**
+| Field | Value |
+| --- | --- |
+| _bottomMargin_ | 30 |
+| _leftMargin_ | 100 |
+| _axisWidth_ | 7 |
+| _graphAreaHeight_ | 150 |
+| _yAxisSteps_ |  10 |
+| _canSwitchToOtherTypes_ | true |
+| _scaleToDesired_ | false |
+| _fitToYval_ | 100 |
+| _yAxisFormatting_ | F1  |
+| _yAxisUnitSign_ | "" |
+| _lineGraphPredict_ | false |
+| _lineGraphPredictionSpace_ | 0 |
+| _liveItemAdd_ | false |
+| _liveItemBuffer_ | 0 |
+
+**DefaultPredict**
+| Field | Value |
+| --- | --- |
+| _bottomMargin_ | 30 |
+| _leftMargin_ | 100 |
+| _axisWidth_ | 7 |
+| _graphAreaHeight_ | 200 |
+| _yAxisSteps_ |  10 |
+| _canSwitchToOtherTypes_ | true |
+| _scaleToDesired_ | false |
+| _fitToYval_ | 50 |
+| _yAxisFormatting_ | F1  |
+| _yAxisUnitSign_ | "" |
+| _lineGraphPredict_ | true |
+| _lineGraphPredictionSpace_ | 30 |
+| _liveItemAdd_ | false |
+| _liveItemBuffer_ | 0 |
+
+**Percentage** 
+| Field | Value |
+| --- | --- |
+| _bottomMargin_ | 30 |
+| _leftMargin_ | 100 |
+| _axisWidth_ | 7 |
+| _graphAreaHeight_ | 200 |
+| _yAxisSteps_ |  10 |
+| _canSwitchToOtherTypes_ | false |
+| _scaleToDesired_ | true |
+| _fitToYval_ | 100 |
+| _yAxisFormatting_ | F0  |
+| _yAxisUnitSign_ | % |
+| _lineGraphPredict_ | false |
+| _lineGraphPredictionSpace_ | 0 |
+| _liveItemAdd_ | false |
+| _liveItemBuffer_ | 0 |
+
+**LiveAdd**
+
+| Field | Value |
+| --- | --- |
+| _bottomMargin_ | 30  |
+| _leftMargin_ | 100 |
+| _axisWidth_ | 7 |
+| _graphAreaHeight_ | 150 |
+| _yAxisSteps_ |  10 |
+| _canSwitchToOtherTypes_ | true |
+| _scaleToDesired_ | false |
+| _fitToYval_ | 100 |
+| _yAxisFormatting_ |  F1 |
+| _yAxisUnitSign_ | "" |
+| _lineGraphPredict_ | false |
+| _lineGraphPredictionSpace_ | 0 |
+| _liveItemAdd_ | true |
+| _liveItemBuffer_ | 20 |
