@@ -1,5 +1,4 @@
 ## Filippo Cortese
-### Portfolio
 
 #### Index
 1. GraphBrain - Unity Tool
