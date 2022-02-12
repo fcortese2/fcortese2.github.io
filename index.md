@@ -145,7 +145,6 @@ The asset comes with a number of pre-specified GraphStyles, which are as follows
 | _liveItemBuffer_ | 0 |
 
 **LiveAdd**
-
 | Field | Value |
 | --- | --- |
 | _bottomMargin_ | 30  |
