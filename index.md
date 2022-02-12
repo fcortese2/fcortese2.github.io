@@ -90,6 +90,7 @@ The struct can be used to define the following, and every field must be specifie
 
 
 The asset comes with a number of pre-specified GraphStyles, which are as follows:
+
 **Default**
 | Field | Value |
 | --- | --- |
