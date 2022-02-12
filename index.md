@@ -2,17 +2,17 @@
 ### Portfolio
 
 #### Index
-1. GraphIt - Unity Tool
+1. GraphBrain - Unity Tool
 2. Character Setup - Unity Tool (_Under development_)
 3. The Gaia Project - Game on Itch
 4. Cypherogue - Game on Itch
 5. Digital card game - AI practice
 
-#### GraphIt - Unity Tool
-GraphIt is a Unity tool that allows developers to display graphs in the unity editor directly. This is especially useful if the developers want to visualize large arrays full of data only in the editor, without losing any performance in the final/development build. This can be handy with regards to balancing, spotting of major bugs and triggers to these bugs, errors in underlying logic, etc... It is not aimed to be a replacement with regards to the recording of historical data and post-playtest data analysis, but rather as an in-engine playtest data debugger/visualizer.
+#### GraphBrain - Unity Tool
+GraphBrain is a Unity tool that allows developers to display graphs in the unity editor directly. This is especially useful if the developers want to visualize large arrays full of data only in the editor, without losing any performance in the final/development build. This can be handy with regards to balancing, spotting of major bugs and triggers to these bugs, errors in underlying logic, etc... It is not aimed to be a replacement with regards to the recording of historical data and post-playtest data analysis, but rather as an in-engine playtest data debugger/visualizer.
 
 ##### Usage
-After importing the `.unitypackage`, using GraphIt is very simple:
+After importing the `.unitypackage`, using GraphBrain is very simple:
 - Firstly, create a new C# script and attach it to a `GameObject`;
 - add the inclusion `using Graphing` at the top of your script;
 - In your newly created script, create a global variable of type `Graph`, but do not instantiate it:
@@ -21,7 +21,7 @@ After importing the `.unitypackage`, using GraphIt is very simple:
   ```
 - Call the following method once when you want to create a graph in the inspector:
   ```csharp
-  GraphIt.CreateGraph(GameObject pointToObject, out Graph graph);
+  GraphBrain.CreateGraph(GameObject pointToObject, out Graph graph);
   ```
   _pointToObject: specify what GameObject's inspector you want the graph to appear on. More often than not, you will set this to `this.gameObject`_
   
@@ -33,7 +33,7 @@ After importing the `.unitypackage`, using GraphIt is very simple:
   
   private void Start()
   {
-      GraphIt.CreateGraph(gameObject, out graph);
+      GraphBrain.CreateGraph(gameObject, out graph);
   }
   ```
  
@@ -48,7 +48,7 @@ After importing the `.unitypackage`, using GraphIt is very simple:
   where `points` is an array of GraphValues (which include a `float Value` and `string Tag`) to plot and a GraphStyle which is used as a drawing visual style for the graph. 
   To get an array of GraphValue[], a handy static method was created that takes in a `string[]` of tags (labels for the X axis of each value) and a `float[]` of values to  display. The method is as follows:
   ```csharp
-  GraphIt.FormatData(float[] values, string[] tags);
+  GraphBrain.FormatData(float[] values, string[] tags);
   ```
 
   For example, we can create and display values as follows:
@@ -60,9 +60,9 @@ After importing the `.unitypackage`, using GraphIt is very simple:
 
   private void Start()
       {
-          GraphIt.CreateGraph(gameObject, out graph, "Test Graph");
+          GraphBrain.CreateGraph(gameObject, out graph, "Test Graph");
 
-          graph.SetValues(GraphIt.FormatData(values, labels), GraphStyle.DefaultPredict);
+          graph.SetValues(GraphBrain.FormatData(values, labels), GraphStyle.DefaultPredict);
       }
 
   ```
