@@ -51,7 +51,7 @@ After importing the `.unitypackage`, using GraphBrain is very simple:
   GraphBrain.FormatData(float[] values, string[] tags);
   ```
 
-  For example, we can create and display values as follows:
+  For example, we can create and display values as follows (if data array size remains constant throughout):
   ```csharp
   float[] values = new float[5] {1, 2, 3, 4, 5};
   string[] labels = new string[5] {"a", "b", "c", "d", "e"};
@@ -66,6 +66,35 @@ After importing the `.unitypackage`, using GraphBrain is very simple:
       }
 
   ```
+  
+  Otherwise, if we want to add realtime data to a pool of numbers and keep displaying the most recent _X_ iterations, where _X_ is a buffer size in terms of how many past values we want to keep in memory, it can be done as follows:
+  ```csharp
+  float trackedVar = 5;
+
+  Graph liveGraph;
+
+  private void Start()
+      {
+          GraphBrain.CreateGraph(gameObject, out liveGraph, "Live Graph");
+
+          StartCoroutine(randomize());
+      }
+      
+  IEnumerator randomize()
+    {
+        while (true)
+        {
+            trackedVar = Random.Range(1, 11);
+            liveGraph.SetValues(liveGraph.GenerateSingleElementArray(trackedVar, "e.g."), GraphStyle.LiveAdd);
+            yield return new WaitForSeconds(5);
+        }
+    }
+  ```
+  as can be seen in the example above, instead of using `GraphBrain.FormatData()` to get the first parameter's value, this time we have used the `GenerateSingleElementArray()` method in our graph reference. This method takes teh following:
+  ```csharp
+  liveGraph.GenerateSingleElementArray(float value, string tag)
+  ```
+  Effectively, this works similarly to `GraphBrain.FormatData()`, but it forces us to only pass 1 value and 1 tag, as Live Graphs on accept the passing of a GraphValue[] with length of 1, per call of `.SetValues(GraphValue[] points, GraphStyle graphStyle)`. Also note that we have changed the GraphStyle to `GraphStyle.LiveAdd`, as `GraphStyle.Default` and `GraphStyle.DefaultPredict` does not allow for Live Add features.
   
 ##### Graph Styles
 GraphStyle is a struct that allows the developer to specify parameters around which the graph is displayed.
