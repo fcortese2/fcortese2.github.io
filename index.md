@@ -1,11 +1,14 @@
 ## Filippo Cortese
 
+### This page is currently being updated with more documentation, resources, and download links.
+
 #### Index
 1. GraphBrain - Unity Tool
 2. Character Setup - Unity Tool (_Under development_)
 3. The Gaia Project - Game on Itch
 4. Cypherogue - Game on Itch
 5. Digital card game - AI practice
+
 
 
 #### GraphBrain - Unity Tool
